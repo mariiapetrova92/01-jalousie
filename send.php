@@ -1,4 +1,4 @@
-﻿<?php
+﻿ <?php
 //Принимаем постовые данные
 $name=$_POST['name'];
 $phone=$_POST['phone'];
@@ -15,8 +15,10 @@ $message = "Письмо отправлено из моей формы<br />
 Имя: ".htmlspecialchars($name)."<br />
 Телефон: ".htmlspecialchars($phone)."<br />
 Вопрос: ".htmlspecialchars($question);
-$headers = "From: petrovka.ru <no-reply@mysite.ru>\r\nContent-type: text/html; charset=UTF-8 \r\n";
+$headers = "From: petrovka.ru\r\n
+			Content-type: text/html; charset=UTF-8 \r\n";
 mail ($to, $subject, $message, $headers);
-header('Location: thanx.html');
-exit;
+//header('Location: thanx.html');
+echo "Thank you, you message has been sent!";
+exit();
 ?>
